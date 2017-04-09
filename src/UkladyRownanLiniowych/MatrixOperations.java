@@ -56,4 +56,13 @@ public class MatrixOperations {
         }
         System.out.print("====================================\n");
     }
+
+    public static void multipleMatrixVector(double[][] a, double[] x, double[] ax){
+        for (int i =0; i < Consts.N; i++){
+            ax[i] = 0;
+            for (int j = 0; j < Consts.N; j++){
+                ax[i] += a[i][j] * x[j];
+            }
+        }
+    }
 }

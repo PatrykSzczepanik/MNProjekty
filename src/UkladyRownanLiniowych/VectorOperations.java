@@ -22,6 +22,20 @@ public class VectorOperations {
         }
     }
 
+    public static void subVectors(double[] ax, double[] b){
+        for (int i =0; i < Consts.N; i++){
+            ax[i] -= b[i];
+        }
+    }
+
+    public static double generateNormEuc(double[] vector){
+        double sum = 0;
+        for (int i =0; i < Consts.N; i++){
+            sum = sum + (vector[i] * vector[i]);
+        }
+        return Math.sqrt(sum);
+    }
+
     public static void printVector(double[] bVector) {
         System.out.print("-----------------------------------\n");
         for (int i = 0; i < Consts.N; i++) {

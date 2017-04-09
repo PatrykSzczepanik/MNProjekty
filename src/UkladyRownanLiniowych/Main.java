@@ -19,14 +19,19 @@ public class Main {
             long start;
             start = System.nanoTime();
 
-//            ResolvingMethods.methodGauss(aMatrix, bVector, xVector);
+            ResolvingMethods.methodGauss(aMatrix, bVector, xVector);
 //            ResolvingMethods.methodJacobi(aMatrix, bVector, xVector);
-            ResolvingMethods.methodJacobi(aMatrix, bVector, xVector);
+//            ResolvingMethods.methodJacobi(aMatrix, bVector, xVector);
+
+            double[] axVector = new double[Consts.N];
+            MatrixOperations.multipleMatrixVector(aMatrix, xVector, axVector);
+            VectorOperations.subVectors(axVector, bVector);
+            System.out.println("NORMA:\t" + VectorOperations.generateNormEuc(axVector));
 
             //Time in ms
             diff += (double)(System.nanoTime() - start)/1000000;
 
-            VectorOperations.printVector(xVector);
+//            VectorOperations.printVector(xVector);
         }
 
 //        System.out.println(Double.toString(diff/20).replace(".", ","));
